@@ -88,6 +88,22 @@ int my_strlen(const char *str)
 }
 #define strlen(a) my_strlen((a))
 
+#ifndef HAVE_STDLIB_H
+static const uint16_t bswap_16(uint16_t x) {
+     x= (x>>8) | (x<<8);
+     return x;
+}
+static void swab(const void *from, void *to, int n) {
+    const int16_t *in = (int16_t*)from;
+    int16_t *out = (int16_t*)to;
+    int i;
+    n /= 2;
+    for (i = 0 ; i < n; i++) {
+        out[i] = bswap_16(in[i]);
+    }
+}
+#endif
+
 ushort CLASS sget2 (uchar *s)
 {
   if (order == 0x4949)		/* "II" means little-endian */

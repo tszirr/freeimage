@@ -21,10 +21,14 @@
 #define HAVE_IO_H 1
 
 /* Define to 1 if you have the <search.h> header file. */
+#ifndef _WIN32
 #define HAVE_SEARCH_H 1
+#endif
 
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
 /* Define to 1 if you have the `snprintf' function. */
 #define HAVE_SNPRINTF 1
+#endif
 
 /* Define to 1 if you have the `setmode' function. */
 #define HAVE_SETMODE 1
