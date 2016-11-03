@@ -27,7 +27,7 @@
 //*@@@---@@@@******************************************************************
 #pragma once
 
-#include <windowsmediaphoto.h>
+#include "../image/sys/windowsmediaphoto.h"
 #if !defined(WIN32) || defined(__MINGW32__)
 #include <wmspecstring.h>
 #endif
