@@ -1,4 +1,4 @@
-/* $Id: tif_fax3.c,v 1.4 2012/10/07 15:54:03 drolon Exp $ */
+/* $Id: tif_fax3.c,v 1.12 2015/10/09 21:36:11 drolon Exp $ */
 
 /*
  * Copyright (c) 1990-1997 Sam Leffler
@@ -442,8 +442,9 @@ _TIFFFax3fillruns(unsigned char* buf, uint32* runs, uint32* erun, uint32 lastx)
 			FILL(n, cp);
 			run &= 7;
 		    }
+                    /* Explicit 0xff masking to make icc -check=conversions happy */
 		    if (run)
-			cp[0] |= 0xff00 >> run;
+			cp[0] = (unsigned char)((cp[0] | (0xff00 >> run))&0xff);
 		} else
 		    cp[0] |= _fillmasks[run]>>bx;
 		x += runs[1];

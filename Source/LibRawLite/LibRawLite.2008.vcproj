@@ -44,7 +44,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./"
+				AdditionalIncludeDirectories="./;../ZLib"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;LIBRAW_NODLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -87,7 +87,7 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="1"
@@ -111,7 +111,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="./"
+				AdditionalIncludeDirectories="./;../ZLib"
 				PreprocessorDefinitions="WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;LIBRAW_NODLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -184,7 +184,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="false"
-				AdditionalIncludeDirectories="./"
+				AdditionalIncludeDirectories="./;../ZLib"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;LIBRAW_NODLL"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -227,7 +227,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|x64"
-			OutputDirectory="$(SolutionDir)$(PlatformName)\$(ConfigurationName)"
+			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
 			ConfigurationType="4"
 			CharacterSet="1"
@@ -256,7 +256,7 @@
 				FavorSizeOrSpeed="1"
 				OmitFramePointers="true"
 				WholeProgramOptimization="false"
-				AdditionalIncludeDirectories="./"
+				AdditionalIncludeDirectories="./;../ZLib"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;LIBRAW_NODLL"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -349,10 +349,6 @@
 				>
 				<File
 					RelativePath=".\internal\defines.h"
-					>
-				</File>
-				<File
-					RelativePath=".\internal\libraw_bytebuffer.h"
 					>
 				</File>
 				<File

@@ -1,4 +1,4 @@
-/* $Id: tif_wince.c,v 1.4 2012/10/07 15:54:03 drolon Exp $ */
+/* $Id: tif_wince.c,v 1.12 2015/10/09 21:36:11 drolon Exp $ */
 
 /*
  * Copyright (c) 1988-1997 Sam Leffler
