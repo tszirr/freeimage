@@ -54,7 +54,7 @@ int CLASS fcol (int row, int col)
   return FC(row,col);
 }
 
-size_t strnlen(const char *s, size_t n)
+static size_t strnlen(const char *s, size_t n)
 {
   const char *p = (const char *)memchr(s, 0, n);
   return(p ? p-s : n);

@@ -35,6 +35,7 @@ INCLUDE_DIRECTORIES(${FREEIMAGE_DIR}/Source/OpenEXR/Iex)
 INCLUDE_DIRECTORIES(${FREEIMAGE_DIR}/Source/OpenEXR/Half)
 INCLUDE_DIRECTORIES(${FREEIMAGE_DIR}/Source/OpenEXR/IlmThread)
 INCLUDE_DIRECTORIES(${FREEIMAGE_DIR}/Source/OpenEXR/)
+INCLUDE_DIRECTORIES(${FREEIMAGE_DIR}/Source/LibJXR/image/sys)
 INCLUDE_DIRECTORIES(${FREEIMAGE_DIR}/Wrapper/FreeImagePlus/)
 
 FILE(GLOB png_files ${LIBPNG_DIR}/*.c)
@@ -49,6 +50,8 @@ FILE(GLOB libmng_files ${FREEIMAGE_DIR}/Source/LibMNG/*.c)
 FILE(GLOB libopenjpeg_files ${FREEIMAGE_DIR}/Source/LibOpenJPEG/*.c)
 FILE(GLOB_RECURSE libraw_files ${FREEIMAGE_DIR}/Source/LibRawLite/*.cpp)
 FILE(GLOB libtiff_files ${FREEIMAGE_DIR}/Source/LibTIFF4/*.c)
+FILE(GLOB_RECURSE libwebp_files ${FREEIMAGE_DIR}/Source/LibWebP/*.c)
+FILE(GLOB_RECURSE libjxr_files ${FREEIMAGE_DIR}/Source/LibJXR/*.c)
 FILE(GLOB metadata_files ${FREEIMAGE_DIR}/Source/metadata/*.cpp)
 FILE(GLOB_RECURSE openexr_files ${FREEIMAGE_DIR}/Source/OpenEXR/*.cpp)
 
@@ -95,7 +98,7 @@ LIST(REMOVE_ITEM openexr_files "${FREEIMAGE_DIR}/Source/OpenEXR/IlmImf/b44ExpLog
 ADD_LIBRARY (freeimage ${png_files} ${zlib_files} ${deprecation_files} 
 			${freeimage_files} ${freeimage_c_files} ${freeimagetoolkit_files} ${freeimagelib_files} ${libjpeg_files}
 			${libmng_files} ${libopenjpeg_files} ${libraw_files}
-			${libtiff_files} ${metadata_files} ${openexr_files}
+			${libtiff_files} ${metadata_files} ${openexr_files} ${libwebp_files} ${libjxr_files}
 			)
 
 IF(NOT BUILD_SHARED_LIBS)
